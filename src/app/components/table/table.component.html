@@ -2,7 +2,7 @@
     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <table class="min-w-full">
+          <table class="min-w-full" #tabla1>
             <thead class="bg-white border-b">
               <tr>
                 <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
@@ -36,6 +36,7 @@
                 </td>
                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                   <button 
+                  (click)="deletePerson(data.nombre)"
                     class="bg-sky-600 text-white py-1 px-3 rounded-lg"
                     >
                     Eliminar</button>
@@ -47,3 +48,64 @@
       </div>
     </div>
   </div>
+<div>
+  <div class="w-3/4 mx-auto">
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
+      <h1 class="mb-5 text-center text-xl font-bold">Formulario Registro</h1>
+      <div>
+        <div class="form-group mb-6 flex items-center">
+          <label
+            for="nombre"
+            class="form-label inline-block mb-2 text-gray-700 mr-5 mt-2 font-light"
+            >Nombre</label
+          >
+          <input
+            type="text"
+            [(ngModel)]="nombre"
+            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            id="nombre"
+            placeholder="Ingrese su nombre"
+          />
+        </div>
+  
+        <div class="form-group mb-6 flex items-center">
+          <label
+            for="apellido"
+            class="form-label inline-block mb-2 text-gray-700 mr-5 mt-2 font-light"
+            >Apellido</label
+          >
+          <input
+            type="text"
+            [(ngModel)]="apellido"
+            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            id="apellido"
+            placeholder="Ingrese su Apellido"
+          />
+        </div>
+  
+        <div class="form-group mb-6 flex items-center">
+          <label
+            for="carrera"
+            class="form-label inline-block mb-2 text-gray-700 mr-5 mt-2 font-light"
+            >Carrera</label
+          >
+          <input
+            type="text"
+            [(ngModel)]="carrera"
+            class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            id="carrera"
+            placeholder="Ingrese su nombre"
+          />
+        </div>
+        <div class="flex justify-center">
+          <button
+            (click)="savePerson()"
+            class="w-3/4 px-6 py-2.5 bg-blue-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+          >
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
